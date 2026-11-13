@@ -54,12 +54,8 @@ public class ColetarMoedas : MonoBehaviour
         titulo.normal.textColor = Color.yellow;
         GUI.Label(new Rect(0, altura * 0.28f, largura, 70), "FIM DE JOGO", titulo);
 
-        var subtitulo = new GUIStyle(titulo) { fontSize = 24, fontStyle = FontStyle.Normal };
-        subtitulo.normal.textColor = Color.white;
-        GUI.Label(new Rect(0, altura * 0.28f + 70, largura, 40), "Voce pegou todas as " + total + " moedas!", subtitulo);
-
         var botao = new GUIStyle(GUI.skin.button) { fontSize = 26 };
-        if (GUI.Button(new Rect(largura / 2f - 110, altura * 0.28f + 140, 220, 56), "Jogar de novo", botao))
+        if (GUI.Button(new Rect(largura / 2f - 110, altura * 0.28f + 90, 220, 56), "Jogar de novo", botao))
         {
             Time.timeScale = 1f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
