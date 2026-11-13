@@ -1,8 +1,7 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 // Desativa a moeda tocada pelo heroi, conta quantas faltam e,
-// ao pegar todas, mostra a tela de fim de jogo (IMGUI, sem Canvas).
+// ao pegar todas, para o jogo e mostra "FIM DE JOGO" (IMGUI, sem Canvas).
 public class ColetarMoedas : MonoBehaviour
 {
     private int total;
@@ -52,13 +51,6 @@ public class ColetarMoedas : MonoBehaviour
             alignment = TextAnchor.MiddleCenter
         };
         titulo.normal.textColor = Color.yellow;
-        GUI.Label(new Rect(0, altura * 0.28f, largura, 70), "FIM DE JOGO", titulo);
-
-        var botao = new GUIStyle(GUI.skin.button) { fontSize = 26 };
-        if (GUI.Button(new Rect(largura / 2f - 110, altura * 0.28f + 90, 220, 56), "Jogar de novo", botao))
-        {
-            Time.timeScale = 1f;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        GUI.Label(new Rect(0, altura / 2f - 35f, largura, 70), "FIM DE JOGO", titulo);
     }
 }
